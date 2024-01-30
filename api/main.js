@@ -1,9 +1,13 @@
 import Fastify from "fastify";
 import mongoose from "mongoose";
 import DataModel from "./dataModel.js";
-
+import cors from "@fastify/cors"
 
 const fastify = Fastify({ logger: true });
+
+fastify.register(cors, {
+    origin: true
+})
 let uri = "mongodb+srv://vinesh:Itsasecret@devops.ndombp9.mongodb.net/test_db?retryWrites=true&w=majority"
 
 
